@@ -16,8 +16,6 @@ jobs:
       - run:
           name: "Run Hugo"
           command: HUGO_ENV=production hugo -v -d $HUGO_BUILD_DIR
-      - run:
-          command: 
       - deploy:
           name: "Deploy website"
           command: |
