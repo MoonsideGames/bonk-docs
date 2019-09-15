@@ -8,12 +8,12 @@ To define a polygon, pass a variable number of **Position2D** structs representi
 
 ```cs
     var polygon = new Polygon(
-        new Position2D(0, 0),
-        new Position2D(-1, -1),
-        new Position2D(1, -1),
-        new Position2D(1, 1),
-        new Position2D(-1, 1)
+        new Position2D(-2, 0),
+        new Position2D(0, 2),
+        new Position2D(2, 0),
     );
 ```
+
+This polygon, for example, is a triangle.
 
 Be careful not to define a concave Polygon, as this will cause the results of collision detection to be incorrect.
