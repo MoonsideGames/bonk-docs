@@ -68,6 +68,8 @@ hash.Retrieve(1, rect, rectTransform);
 
 In this example, the circle we inserted will be in the *IEnumerable* returned by the *Retrieve* call because they both exist in the same hash cell.
 
+If a potential colliding shape-transform has the same ID as the one passed into the method, it will not be returned in the *IEnumerable*.
+
 ---
 
 ##### **public void Clear()**
