@@ -10,4 +10,4 @@ To create a *Transform2D*, you must provide a *Position2D* or a *Vector2* for tr
 var transform = new Transform2D(new Position2D(4, 1), 5f, new Vector2(3, 1));
 ```
 
-The following section will describe how to use Shapes in conjunction with Transforms to perform collision detection.
+The following section will describe how to use an *IShape2D* in conjunction with *Transform2D* to perform collision detection.

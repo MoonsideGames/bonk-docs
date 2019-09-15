@@ -12,7 +12,7 @@ This can present us with problems when it comes to game physics. If your charact
 
 To avoid these problems, I created the *Position2D* struct. *Position2D* maintains an integer X and Y position, as well as X and Y fractional carryover. Whenever numbers with fractional values are added to the position, the fractional values are added to the carryover. Once the carryover value reaches 1, it is added to the coordinate. This means that we can treat positions as integer values without sacrificing precision. 
 
-This means that in our physics calculations, we will never have discrepancies between internal game position logic and rendering. 
+Therefore, in our physics calculations, we will never have discrepancies between internal game position logic and rendering. 
 
 ```cs
 var one = new Position2D(1.3f, 3.5f);

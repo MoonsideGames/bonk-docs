@@ -34,7 +34,7 @@ hash.Insert(1, rect, rectTransform);
 To find potential collisions, use the **Retrieve** method and give an ID, an IShape2D, and a Transform2D.
 
 ```cs
-hash.Retrieve(1, rectB, rectBTransform);
+hash.Retrieve(1, rect, rectTransform);
 ```
 
 In this example, the above method call returns an *IEnumerable<(T, IShape2D, Transform)>* containing the circle information we inserted.

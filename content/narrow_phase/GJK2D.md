@@ -6,7 +6,7 @@ weight: 10
 
 Bonk uses the Gilbert-Johnson-Keerthi, or GJK, algorithm to perform narrow phase collision detection. 
 
-To accurately check a collision, you must pass two sets of shapes and transforms. Remember that a transform operates on the vertices of a shape: it moves, rotates, and scales them in 2D space.
+To accurately check a collision, you must pass two sets of shapes and transforms to the *GJK2D.TestCollision* method. Remember that a transform operates on the vertices of a shape: it moves, rotates, and scales them in 2D space.
 
 ```cs
 var circleA = new Circle(2);
