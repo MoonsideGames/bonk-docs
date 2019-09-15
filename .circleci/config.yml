@@ -7,8 +7,8 @@ jobs:
     environment:
       BRANCH: master
       TARGET_REPO: moontools-docs/moontools-docs.github.io.git
-      DOCS_CHECKOUT_DIR: ~/checkout
-      HUGO_BUILD_DIR: ~/checkout/bonk
+      DOCS_CHECKOUT_DIR: ~/build
+      HUGO_BUILD_DIR: ~/build/bonk
     steps:
       - checkout
       - run:
