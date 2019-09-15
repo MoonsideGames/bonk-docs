@@ -1,7 +1,11 @@
-baseURL = "https://moontools.github.io"
+baseURL = "/"
 languageCode = "en-us"
 title = "Bonk Docs"
-
 theme = "hugo-theme-learn"
+
 [outputs]
 home = ["HTML", "RSS", "JSON"]
+
+[params]
+themeVariant = "bonk"
+author = "Evan Hemsley"
