@@ -1,4 +1,4 @@
-baseURL = "/bonk/"
+baseURL = "https://moontools-docs.github.io/bonk/"
 languageCode = "en-us"
 title = "Bonk Docs"
 theme = "hugo-theme-learn"
