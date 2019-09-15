@@ -17,4 +17,4 @@ var transformB = new Transform2D(new Vector2(1, 1));
 var (result, simplex) = GJK2D.TestCollision(circleA, transformA, circleB, transformB);
 ```
 
-Note that this method returns two variables. The first is whether an overlap has occurred. The second is the simplex. You can think of the simplex as a key that helps you find the minimum separating vector. Note that if there was no collision, the value of the simplex is irrelevant. 
+Note that this method returns two variables. The first is whether an overlap has occurred. The second is the termination simplex. You can think of the termination simplex as a key that helps you find the penetration vector with *EPA2D*. Note that if there was no collision, the value of the simplex is irrelevant. 
