@@ -25,7 +25,7 @@ jobs:
               #go into directory and copy data we're interested in to that directory
               cd built_website
               echo "rsync built code with checked out code..."
-              rsync -r --exclude=.git --delete ~/project/src/build ~/repo
+              rsync -r --exclude=.git --delete ~/project/build ~/repo
               #add, commit and push files
               echo "add files to git..."
               git add -f .
