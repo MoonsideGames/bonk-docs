@@ -7,8 +7,8 @@ jobs:
     environment:
       BRANCH: master
       TARGET_REPO: moontools-docs/moontools-docs.github.io.git
-      DOCS_CHECKOUT_DIR: ~/build
-      HUGO_BUILD_DIR: ~/build/bonk
+      DOCS_CHECKOUT_DIR: ~/docs
+      HUGO_BUILD_DIR: ~/build
     steps:
       - checkout
       - run:
@@ -26,12 +26,12 @@ jobs:
               git config --global user.name "CircleCI"
               #using token clone gh-pages branch
               git clone --quiet --branch=$CIRCLE_BRANCH https://${GH_TOKEN}@github.com/$TARGET_REPO $DOCS_CHECKOUT_DIR > /dev/null
-              #go into directory and copy data we're interested in to that directory
-              cd $HUGO_BUILD_DIR
+              #rsync
               echo "rsync built code with checked out code..."
-              rsync -r --exclude=.git --delete ~/project/public $HUGO_BUILD_DIR
+              rsync -a --exclude=.git --delete $HUGO_BUILD_DIR/ $DOCS_CHECKOUT_DIR/bonk
               #add, commit and push files
               echo "add files to git..."
+              cd $DOCS_CHECKOUT_DIR
               git add --all
               echo "commit files to git repository..."
               if git commit -m "CircleCI build $CIRCLE_BUILD_NUM pushed to Github Pages" ; then
