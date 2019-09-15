@@ -11,7 +11,7 @@ jobs:
       - checkout
       - run:
           name: "Run Hugo"
-          command: HUGO_ENV=production hugo -v -s ~/project/src
+          command: HUGO_ENV=production hugo -v -s ~/project
       - deploy:
           command: |
             if [ "${CIRCLE_BRANCH}" = "master" ]; then
