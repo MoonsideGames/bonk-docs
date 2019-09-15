@@ -4,7 +4,7 @@ date: 2019-09-14T22:54:35-07:00
 weight: 20
 ---
 
-If an overlap has occurred, often we wish to determine the minimum separating vector, which is the shortest possible vector by which one of the shapes could be moved in order for them to stop overlapping. For this purpose, Bonk implements the Expanding Polytope Algorithm.
+If an overlap has occurred, often we wish to determine the penetration vector, which is the shortest possible vector by which one of the shapes could be moved in order for them to stop overlapping. For this purpose, Bonk implements the Expanding Polytope Algorithm.
 
 To use this feature, you must pass the shapes and transforms as well as the simplex that is returned from the *GJK2D.TestCollision* method.
 
