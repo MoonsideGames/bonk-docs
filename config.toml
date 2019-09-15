@@ -1,4 +1,4 @@
-baseURL = "/"
+baseURL = "/bonk/"
 languageCode = "en-us"
 title = "Bonk Docs"
 theme = "hugo-theme-learn"
