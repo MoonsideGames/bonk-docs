@@ -1,6 +1,7 @@
 ---
 title: "Introduction"
 date: 2019-09-14T18:36:07-07:00
+weight: 5
 ---
 
 Let's say we have a room with 100 objects. How do we know if any of those 100 objects are touching one another?

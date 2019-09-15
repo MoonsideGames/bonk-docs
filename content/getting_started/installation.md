@@ -24,3 +24,5 @@ using MoonTools.Core.Bonk;
 ```
 
 in any C# file.
+
+Of course, you are free to include the source code directly in your project as well, but this is less convenient.
