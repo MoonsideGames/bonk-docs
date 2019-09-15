@@ -6,7 +6,7 @@ jobs:
     working_directory: ~/project
     environment:
       BRANCH: master
-      TARGET_REPO: MoonsideGames/
+      TARGET_REPO: moontools-docs/moontools-docs.github.io.git
     steps:
       - checkout
       - run:
