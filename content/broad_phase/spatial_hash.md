@@ -6,13 +6,15 @@ weight: 10
 
 In spatial hashing, we place each object into one or more "buckets". Think of a grid covering 2D space. When an object's bounding box covers one of the cells in this grid, it is placed into that cell. Any two unique objects that occupy the same cell are determined to be *potentially colliding*.
 
-In Bonk, a spatial hash is defined by its ID type and a cell size. The ID type is used to filter objects. Any two objects with the same ID are assumed to not be colliding.
+In Bonk, a spatial hash is defined by its ID type and a cell width. The ID type is used to filter objects. Any two objects with the same ID are assumed to not be colliding.
 
 ```cs
 var hash = new SpatialHash<Guid>(32);
 ```
 
-This spatial hash will use C# **GUID**s as its ID type and a cell size of 32.
+This spatial hash will use C# **GUID**s as its ID type and a cell width of 32.
+
+There is an art to choosing a cell width. If your cell width is too small relative to the objects in your game, then your objects will occupy many cells, and the hash check will have to check all of those cells for potential collisions. If your cell width is too large, then many objects will be contained in each cell. You are looking for a sweet spot. My rule of thumb is picking a cell width that is roughly twice the size of the most common objects in your game. 
 
 To insert an object into the hash, use the **Insert** method and give an ID, an IShape2D, and a Transform2D.
 
