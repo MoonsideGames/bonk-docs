@@ -7,11 +7,17 @@ jobs:
     environment:
       BRANCH: master
       TARGET_REPO: moontools-docs/moontools-docs.github.io.git
+      DOCS_CHECKOUT_DIR: ~/checkout
+      HUGO_BUILD_DIR: ~/checkout/bonk
     steps:
       - checkout
       - run:
+          command: git submodule sync && git submodule update --init
+      - run:
           name: "Run Hugo"
-          command: HUGO_ENV=production hugo -v
+          command: HUGO_ENV=production hugo -v -d $HUGO_BUILD_DIR
+      - run:
+          command: 
       - deploy:
           name: "Deploy website"
           command: |
@@ -21,15 +27,14 @@ jobs:
               git config --global user.email "builds@circleci.com"
               git config --global user.name "CircleCI"
               #using token clone gh-pages branch
-              git clone --quiet --branch=$CIRCLE_BRANCH https://${GH_TOKEN}@github.com/$TARGET_REPO built_website > /dev/null
+              git clone --quiet --branch=$CIRCLE_BRANCH https://${GH_TOKEN}@github.com/$TARGET_REPO $DOCS_CHECKOUT_DIR > /dev/null
               #go into directory and copy data we're interested in to that directory
-              cd built_website
+              cd $HUGO_BUILD_DIR
               echo "rsync built code with checked out code..."
-              rsync -r --exclude=.git --delete ~/project/public ./
-              mv ./public ./bonk
+              rsync -r --exclude=.git --delete ~/project/public $HUGO_BUILD_DIR
               #add, commit and push files
               echo "add files to git..."
-              git add -f .
+              git add --all
               echo "commit files to git repository..."
               if git commit -m "CircleCI build $CIRCLE_BUILD_NUM pushed to Github Pages" ; then
                 echo "git push files with force..."
