@@ -11,8 +11,9 @@ jobs:
       - checkout
       - run:
           name: "Run Hugo"
-          command: HUGO_ENV=production hugo -v -s ~/project
+          command: HUGO_ENV=production hugo -v
       - deploy:
+          name: "Deploy website"
           command: |
             if [ "${CIRCLE_BRANCH}" = "master" ]; then
               echo -e "Starting to deploy to Github Pages\n"
@@ -25,6 +26,7 @@ jobs:
               cd built_website
               echo "rsync built code with checked out code..."
               rsync -r --exclude=.git --delete ~/project/public ./
+              mv ./public ./bonk
               #add, commit and push files
               echo "add files to git..."
               git add -f .
