@@ -17,3 +17,5 @@ To define a polygon, pass a variable number of **Position2D** structs representi
 This polygon, for example, is a triangle.
 
 Be careful not to define a concave Polygon, as this will cause the results of collision detection to be incorrect.
+
+Also note that because Polygon stores its vertices in an array, instantiating Polygons will cause GC pressure. It is best to use another kind of `IShape2D` if possible.

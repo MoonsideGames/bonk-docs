@@ -4,11 +4,11 @@ date: 2019-09-15T11:23:43-07:00
 weight: 30
 ---
 
-*EPA2D* is a static class containing a single public method which is used for computing the penetration vector of two overlapping shapes.
+*EPA2D* is a static class containing a single method for computing the penetration vector of two overlapping shapes.
 
 ## Methods
 
-##### **public static Vector2 Intersect(IShape2D shapeA, Transform2D Transform2DA, IShape2D shapeB, Transform2D Transform2DB, IEnumerable<Vector2> givenSimplexVertices)**
+##### **public static Vector2 Intersect(IShape2D shapeA, Transform2D Transform2DA, IShape2D shapeB, Transform2D Transform2DB, Simplex simplex)**
 
 Given two sets of shapes and transforms and an initial simplex, computes a penetration vector. When motion along the penetration vector is applied, the shape-transforms are guaranteed to become separated.
 
@@ -20,7 +20,7 @@ var transformA = Transform2D.DefaultTransform;
 var squareB = new Rectangle(-1, -1, 1, 1);
 var transformB = new Transform2D(new Vector2(1.5f, 0));
 
-var (result, simplex) = GJK2D.TestCollision(squareA, transformA, squareB, transformB);
+var (result, simplex) = GJK2D.FindCollisionSimplex(squareA, transformA, squareB, transformB);
 
 if (result)
 {

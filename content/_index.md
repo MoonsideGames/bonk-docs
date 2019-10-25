@@ -10,7 +10,7 @@ Bonk **is** designed to help you figure out if two shapes are overlapping and by
 
 Bonk **is not** a physics simulator and it will not help you execute collision responses. 
 
-Bonk is designed for performance and memory efficiency. Defining shapes and performing collision tests require no heap allocations and thus put no pressure on the garbage collector. If you reuse spatial hashes, Bonk will never cause garbage collection. 
+Bonk is designed for performance and memory efficiency. Defining most shapes and performing collision tests require no heap allocations and thus put no pressure on the garbage collector. If you reuse spatial hashes and avoid using arbitrary polygons, Bonk will never cause garbage collection.
 
 Bonk is available as a [NuGet package](https://www.nuget.org/packages/MoonTools.Core.Bonk/).
 
