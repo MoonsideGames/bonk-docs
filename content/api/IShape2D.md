@@ -6,7 +6,7 @@ weight: 5
 
 An *IShape2D* is an interface that, when implemented, allows for spatial hashing and the computation of Minkowski Differences.
 
-Your *IShape2D* types should be structs for memory efficiency purposes.
+Your *IShape2D* implementations should be structs for memory efficiency purposes.
 
 ## Methods
 
