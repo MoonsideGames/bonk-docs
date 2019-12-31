@@ -16,6 +16,14 @@ The minimum point of the AABB.
 
 The maximum point of the AABB.
 
+##### **public float Width { get; }**
+
+The width of the AABB.
+
+##### **public float Height { get; }**
+
+The height of the AABB.
+
 ## Methods
 
 ##### **public static AABB FromVertices(IEnumerable<Position2D> vertices)**
