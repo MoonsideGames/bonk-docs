@@ -8,6 +8,12 @@ An *IShape2D* is an interface that, when implemented, allows for spatial hashing
 
 Your *IShape2D* implementations should be structs for memory efficiency purposes.
 
+## Properties
+
+##### **public AABB { get; }**
+
+An axis-aligned bounding box for the shape. This is stored so we can efficiently transform the AABB when necessary.
+
 ## Methods
 
 ##### **Vector2 Support(Vector2 direction, Transform2D transform)**
@@ -34,13 +40,8 @@ A method which returns the axis-aligned bounding box for the transformed shape.
 For example, the AABB method for Bonk's *Circle* implementation:
 
 ```cs
-public AABB AABB(Transform2D Transform2D)
+public AABB TransformedAABB(Transform2D Transform2D)
 {
-    return new AABB(
-        Transform2D.Position.X - Radius,
-        Transform2D.Position.Y - Radius,
-        Transform2D.Position.X + Radius,
-        Transform2D.Position.Y + Radius
-    );
+    return AABB.Transformed(AABB, transform2D);
 }
 ```
