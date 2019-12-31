@@ -33,7 +33,7 @@ public Vector2 Support(Vector2 direction, Transform2D transform)
 
 ---
 
-##### **AABB AABB(Transform2D transform)**
+##### **AABB TransformedAABB(Transform2D transform)**
 
 A method which returns the axis-aligned bounding box for the transformed shape.
 
